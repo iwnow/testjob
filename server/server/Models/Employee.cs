@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using server.DTO;
+using server.Extensions;
 
 namespace server.Models
 {
@@ -27,5 +29,20 @@ namespace server.Models
         //references
         public int? PositionId { get; set; }
         public Position Position { get; set; }
+
+
+        //to dto
+        public DtoEmployee AsDto()
+        {
+            return new DtoEmployee
+            {
+                BirthDate = this.BirthDate.toDDMMYYYYbyPoint(),
+                FirstName = this.FirstName,
+                Id = this.Id,
+                LastName = this.LastName,
+                Phone = this.Phone,
+                Position = this.Position.AsDto()
+            };
+        }
     }
 }

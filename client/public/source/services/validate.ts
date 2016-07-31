@@ -6,5 +6,9 @@ export const validate = {
 	
 	pass: function(p: string) {
 		return !!p;
+	},
+
+	phone: function(p:string) {
+		return /^\d+$/.test(p) && p.length == 11;
 	}
 }

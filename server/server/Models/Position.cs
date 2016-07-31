@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using server.DTO;
 
 namespace server.Models
 {
@@ -19,5 +20,14 @@ namespace server.Models
 
         //references
         public ICollection<Employee> Employees { get; set; }
+
+        public DtoPosition AsDto()
+        {
+            return new DtoPosition
+            {
+                Id = this.Id,
+                Name = this.Name
+            };
+        }
     }
 }

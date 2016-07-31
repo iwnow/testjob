@@ -8,7 +8,7 @@ if ((BrowserVersion.name == 'IE' || BrowserVersion.name == 'MSIE' )
 }
 
 //загрузка приложения
-//moment.locale('ru');
+moment.locale('ru');
 import {Dashboard} from './components';
 
 if (root)

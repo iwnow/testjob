@@ -20,6 +20,7 @@ namespace server
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);       
             BundleConfig.RegisterBundles(BundleTable.Bundles);     
+            IoC.Configure();
         }
     }
 }
